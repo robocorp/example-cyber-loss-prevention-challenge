@@ -84,7 +84,13 @@ The `scraper.robot` contains the web scraping logic for the credit card dump dat
 
 The login credentials are retrieved from the [vault](https://robocorp.com/docs/development-guide/variables-and-secrets/vault).
 
-The robot figures out the number of pages it needs to scrape by looking at the pager element. It scrapes the data from the table on each page and returns a list of dictionaries containing the customer and card data.
+The robot figures out the number of pages it needs to scrape by looking at the pager element.
+
+<img src="images/pager.png" style="margin-bottom:20px">
+
+It scrapes the data from the table on each page and returns a list of dictionaries containing the customer and card data.
+
+<img src="images/credit-card-dump-data.png" style="margin-bottom:20px">
 
 ```robot
 *** Settings ***
