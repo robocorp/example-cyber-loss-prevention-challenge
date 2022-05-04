@@ -1,9 +1,11 @@
 *** Settings ***
-Library           OperatingSystem
-Resource          shared.robot
+Library     OperatingSystem
+Resource    shared.robot
+
 
 *** Variables ***
-${CANCELLATIONS_CSV}=    ${OUTPUT_DIR}${/}cancellations.csv
+${CANCELLATIONS_CSV}=       ${OUTPUT_DIR}${/}cancellations.csv
+
 
 *** Keywords ***
 Fill in cancellations CSV

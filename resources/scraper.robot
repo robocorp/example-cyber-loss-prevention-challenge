@@ -1,7 +1,8 @@
 *** Settings ***
-Library           RPA.Robocorp.Vault
-Library           String
-Resource          shared.robot
+Library     RPA.Robocorp.Vault
+Library     String
+Resource    shared.robot
+
 
 *** Keywords ***
 Log in to Ryan's Club website
@@ -50,21 +51,19 @@ Scrape credit card dump data
             ...    country=${country}
             Append To List    ${credit_card_dump_data}    ${data}
         END
-        IF    ${counter} != ${page_count}
-            Click    css=li.pager:last-child
-        END
+        IF    ${counter} != ${page_count}    Click    css=li.pager:last-child
     END
-    [Return]    ${credit_card_dump_data}
+    RETURN    ${credit_card_dump_data}
 
 Get page count
     ${page_count}=
     ...    Get Attribute
     ...    css=.dataTable-pagination .ellipsis + li a
     ...    data-page
-    [Return]    ${page_count}
+    RETURN    ${page_count}
 
 Get cell text
     [Arguments]    ${row}    ${cell_index}
     ${text}=    Get Text    ${row} >> css=td:nth-child(${cell_index})
-    ${text}    Strip String    ${text}
-    [Return]    ${text}
+    ${text}=    Strip String    ${text}
+    RETURN    ${text}

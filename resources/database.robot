@@ -1,10 +1,12 @@
 *** Settings ***
-Library           RPA.Database
-Library           RPA.HTTP
-Resource          shared.robot
+Library     RPA.Database
+Library     RPA.HTTP
+Resource    shared.robot
+
 
 *** Variables ***
-${CUSTOMER_DATABASE}=    ${OUTPUT_DIR}${/}CustomerData.db
+${CUSTOMER_DATABASE}=       ${OUTPUT_DIR}${/}CustomerData.db
+
 
 *** Keywords ***
 Download the customer database
@@ -45,4 +47,4 @@ Query compromised customers from database
             Append To List    ${compromised_customers}    ${rows}[0]
         END
     END
-    [Return]    ${compromised_customers}
+    RETURN    ${compromised_customers}

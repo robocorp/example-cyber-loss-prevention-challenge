@@ -1,3 +1,3 @@
 *** Settings ***
-Library           Collections
-Library           RPA.Browser.Playwright
+Library     Collections
+Library     RPA.Browser.Playwright

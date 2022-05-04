@@ -1,9 +1,11 @@
 *** Settings ***
-Documentation     Completes the Cyber Loss Prevention challenge.
-Resource          csv.robot
-Resource          database.robot
-Resource          scraper.robot
-Resource          shared.robot
+Documentation       Completes the Cyber Loss Prevention challenge.
+
+Resource            csv.robot
+Resource            database.robot
+Resource            scraper.robot
+Resource            shared.robot
+
 
 *** Tasks ***
 Complete the Cyber Loss Prevention challenge
@@ -22,13 +24,14 @@ Complete the Cyber Loss Prevention challenge
     Upload cancellations CSV
     Take a screenshot of the result
 
+
 *** Keywords ***
 Open the Eagle One Financial website
     New Context    userAgent=Chrome/100.0.4896.75
     ${eagle_one_financial_page}=
     ...    New Page
     ...    https://developer.automationanywhere.com/challenges/automationanywherelabs-cyberlossprevention.html
-    [Return]    ${eagle_one_financial_page}
+    RETURN    ${eagle_one_financial_page}
 
 Open the Ryan's Club website
     Click    text="Ryan's Club Login"
